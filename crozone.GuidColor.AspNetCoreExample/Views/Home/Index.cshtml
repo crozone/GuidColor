@@ -3,8 +3,8 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>GuidColor demo</p>
+    <h1 class="display-4">GUID Color</h1>
+    <p>Guid Color Example</p>
 </div>
 
 
@@ -12,17 +12,17 @@
     <thead>
         <tr>
             <th>Standard GUID</th>
-            <th>Short GUID</th>
-            <th>Color GUID</th>
+            <th>Small + Color</th>
+            <th>Color</th>
         </tr>
     </thead>
     <tbody>
 
         @for (int i = 0; i < 256;)
         {
-            var thisGuid = Guid.NewGuid();
+            var thisGuid = (i != 0) ? Guid.NewGuid() : Guid.Empty;
 
-            int repeat = Random.Shared.Next(1, 4);
+            int repeat = i == 0 ? 1 : Random.Shared.Next(1, 4);
             for (int j = 0; j < repeat && i < 256; i++, j++)
             {
                 <tr class="table-row">
