@@ -71,7 +71,7 @@ namespace crozone.GuidColor
         public static (string color, bool isDark) ToHtmlColor(this Guid guid, long seed = 0)
         {
             (Color guidColor, bool isDark) = guid.ToColor(seed);
-            string htmlColor = $"#{guidColor.R:X2}{guidColor.G:X2}{guidColor.B:X2}"; //ColorTranslator.ToHtml(guidColor);
+            string htmlColor = ColorTranslator.ToHtml(guidColor);
             return (htmlColor, isDark);
         }
     }
