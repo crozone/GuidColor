@@ -7,6 +7,8 @@
     bool colorGuid = @ViewData["color"] as bool? ?? false;
     if (colorGuid)
     {
+        string lightClass = @ViewData["lightClass"] as string ?? "badge text-dark text-monospaced";
+        string darkClass = @ViewData["darkClass"] as string ?? "badge text-white text-monospaced";
         string? format = @ViewData["format"] as string;
         bool smallGuid = @ViewData["small"] as bool? ?? false;
         string guidText = smallGuid 
@@ -15,7 +17,7 @@
                 ? guid.ToString(format)
                 : guid.ToString();
         (string guidColor, bool isDark) = guid.ToHtmlColor();
-<span class="badge @(isDark ? "text-white" : "text-dark")" style="background-color:@guidColor"><span class="text-monospaced">@guidText</span></span>
+<span class="@(isDark ? darkClass : lightClass)" style="background-color:@guidColor">@guidText</span>
     }
     else
     {
