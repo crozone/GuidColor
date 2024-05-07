@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>GuidColor demo</p>
+</div>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Standard GUID</th>
+            <th>Short GUID</th>
+            <th>Color GUID</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @for (int i = 0; i < 256;)
+        {
+            var thisGuid = Guid.NewGuid();
+
+            int repeat = Random.Shared.Next(1, 4);
+            for (int j = 0; j < repeat && i < 256; i++, j++)
+            {
+                <tr class="table-row">
+                    <td>@Html.DisplayFor(modelItem => thisGuid)</td>
+                    <td>@Html.DisplayFor(modelItem => thisGuid, new { small = true, color = true })</td>
+                    <td>@Html.DisplayFor(modelItem => thisGuid, new { small = false, color = true })</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

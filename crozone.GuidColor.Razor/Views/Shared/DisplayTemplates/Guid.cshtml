@@ -1,0 +1,24 @@
+@using System;
+@using crozone.GuidColor
+@model Guid?
+
+@if (Model is Guid guid)
+{
+    bool colorGuid = @ViewData["color"] as bool? ?? false;
+    if (colorGuid)
+    {
+        string? format = @ViewData["format"] as string;
+        bool smallGuid = @ViewData["small"] as bool? ?? false;
+        string guidText = smallGuid 
+            ? guid.ToString("N").Substring(0, 8)
+            : !string.IsNullOrEmpty(format)
+                ? guid.ToString(format)
+                : guid.ToString();
+        (string guidColor, bool isDark) = guid.ToHtmlColor();
+<span class="badge @(isDark ? "text-white" : "text-dark")" style="background-color:@guidColor"><span class="text-monospaced">@guidText</span></span>
+    }
+    else
+    {
+<text>@guid</text>
+    }
+}
