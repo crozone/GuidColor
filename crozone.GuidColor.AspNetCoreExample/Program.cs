@@ -1,9 +1,5 @@
-using System.Reflection;
-
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 
 namespace crozone.GuidColor.AspNetCoreExample

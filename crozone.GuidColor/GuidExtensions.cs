@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO.Hashing;
 using System.Runtime.InteropServices;
-using System.Security.Cryptography;
 
 namespace crozone.GuidColor
 {

@@ -1,9 +1,9 @@
 using System.Diagnostics;
 
-using crozone.GuidColor.AspNetCoreExample.Models;
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+
+using crozone.GuidColor.AspNetCoreExample.Models;
 
 namespace crozone.GuidColor.AspNetCoreExample.Controllers
 {
