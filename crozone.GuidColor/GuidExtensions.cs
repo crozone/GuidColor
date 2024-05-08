@@ -14,7 +14,7 @@ namespace crozone.GuidColor
         /// <param name="guid">The source GUID to create a color from</param>
         /// <param name="seed">The seed used for the hashing algorithm. Can be set to change the color of a set of GUIDs depending on context.</param>
         /// <returns>
-        /// A <see cref="ValueTuple{Color, bool}"/> of the GUID color, and whether the color is considered dark.
+        /// A <see cref="ValueTuple{Color, Boolean}"/> of the GUID color, and whether the color is considered dark.
         /// The IsDark value is intended to facilitate displaying readable, high contrast text over the top of the GUID color when it is used as a background color.
         /// If IsDark is true, light colored text should be displayed.
         /// If IsDark is false, dark colored text should be displayed.
@@ -76,7 +76,7 @@ namespace crozone.GuidColor
         /// <param name="guid">The source GUID to create a color from</param>
         /// <param name="seed">The seed used for the hashing algorithm. Can be set to change the color of a set of GUIDs depending on context.</param>
         /// <returns>
-        /// A <see cref="ValueTuple{string, bool}"/> of the GUID color as a HTML color string, and whether the color is considered dark.
+        /// A <see cref="ValueTuple{String, Boolean}"/> of the GUID color as a HTML color string, and whether the color is considered dark.
         /// The IsDark value is intended to facilitate displaying readable, high contrast text over the top of the GUID color when it is used as a background color.
         /// If IsDark is true, light colored text should be displayed.
         /// If IsDark is false, dark colored text should be displayed.
